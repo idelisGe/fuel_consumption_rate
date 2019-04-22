@@ -1,0 +1,72 @@
+<odoo>
+  <record id="consumption_rate_result_search" model="ir.ui.view">
+    <field name="name">consumption_rate_result_search</field>
+    <field name="model">consumption.rate.result</field>
+    <field name="arch" type="xml">
+      <search string="Search View">
+	<field name="vehicle_id" string="Vehicle"/>
+	<field name="consumption_date" string="Fecha"/>
+	<field name="odometer" string="Odómetro"/>
+	<field name="liter" string="Cantidad de Litros"/>
+	<field name="average_km_liter" string="Average Km/L"/>
+	<field name="km_by_liter" string="KM/L"/>
+	<field name="liter_by_hour" string="L/Hour"/>
+	<field name="average_km_liter" string="Average KM/L"/>
+	<field name="average_liter_by_hour" string="Average L/Hora"/>
+        <group expand="1" string="Group By">
+          <filter name="by_vehicle" string="Vehicle"
+                  context="{'group_by':'vehicle_id'}"/>
+          <filter name="reg_month" string="Month"
+                  context="{'group_by':'consumption_date:month'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+  
+  <record id="consumption_rate_result_form_view" model="ir.ui.view">
+    <field name="name">consumption.rate.result.form.view</field>
+    <field name="model">consumption.rate.result</field>
+    <field name="arch" type="xml">
+      <form>
+	<sheet>
+	  <separator string="Consumption Rate Result"/>
+	  <group colspan="4" col="4">
+	    <field name="vehicle_id" string="Vehicle"/>
+	    <field name="consumption_date" string="Fecha"/>
+	    <field name="odometer" string="Odómetro"/>
+	    <field name="liter" string="Cantidad de Litros"/>
+	    <field name="km_by_liter" string="KM/L"/>
+	    <field name="average_km_liter" string="Average Total KM/L"/>
+	    <field name="liter_by_hour" string="L/Hour"/>
+	    <field name="average_liter_by_hour" string="Average Total L/Hora"/>
+	  </group>
+	</sheet>
+      </form>
+    </field>
+  </record>
+  
+  <record id="consumption_rate_result_tree_view" model="ir.ui.view">
+    <field name="name">consumption.rate.result.tree.view</field>
+    <field name="model">consumption.rate.result</field>
+    <field name="arch" type="xml">
+      <tree>
+	<field name="vehicle_id" string="Vehicle"/>
+	<field name="consumption_date" string="Fecha"/>
+	<field name="odometer" string="Odómetro"/>
+	<field name="liter" string="Cantidad de Litros"/>
+	<field name="km_by_liter" string="KM/L"/>
+	<field name="average_km_liter" string="Average Total KM/L"/>
+	<field name="liter_by_hour" string="L/Hour"/>
+	<field name="average_liter_by_hour" string="Average Total L/Hora"/>
+      </tree>
+    </field>
+  </record>
+  
+  <record model="ir.actions.act_window" id="action_consumption_rate_result">
+    <field name="name">Consumption Rate Result</field>
+    <field name="res_model">consumption.rate.result</field>
+    <field name="view_mode">tree,form,search</field>
+  </record>
+
+
+</odoo>

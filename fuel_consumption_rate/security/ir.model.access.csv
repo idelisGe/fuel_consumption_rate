@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_consumption_rate_user,consumption.rate.result,model_consumption_rate_result,base.group_user,1,1,1,1

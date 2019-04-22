@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="fuel_consumption_rate.list">
+      <field name="name">fuel_consumption_rate list</field>
+      <field name="model">fuel_consumption_rate.fuel_consumption_rate</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="fuel_consumption_rate.action_window">
+      <field name="name">fuel_consumption_rate window</field>
+      <field name="res_model">fuel_consumption_rate.fuel_consumption_rate</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="fuel_consumption_rate.action_server">
+      <field name="name">fuel_consumption_rate server</field>
+      <field name="model_id" ref="model_fuel_consumption_rate_fuel_consumption_rate"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="fuel_consumption_rate" id="fuel_consumption_rate.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="fuel_consumption_rate.menu_1" parent="fuel_consumption_rate.menu_root"/>
+    <menuitem name="Menu 2" id="fuel_consumption_rate.menu_2" parent="fuel_consumption_rate.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="fuel_consumption_rate.menu_1_list" parent="fuel_consumption_rate.menu_1"
+              action="fuel_consumption_rate.action_window"/>
+    <menuitem name="Server to list" id="fuel_consumption_rate" parent="fuel_consumption_rate.menu_2"
+              action="fuel_consumption_rate.action_server"/>
+    -->
+  </data>
+</odoo>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fuel_consumption_rate_fuel_consumption_rate,fuel_consumption_rate.fuel_consumption_rate,model_fuel_consumption_rate_fuel_consumption_rate,,1,0,0,0

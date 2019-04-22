@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record model="ir.ui.view" id="date_selector_view">
+    <field name="name">date.selector.wiz</field>
+    <field name="model">consumption.rate.date</field>
+    <field name="arch" type="xml">
+      <form string="Select Range Date">
+        <group string="Select Range Date">
+          <field name="initial_date_range" string="Initial Date"/>
+        </group>
+        <group>
+          <field name="end_date_range" string="End Date"/>
+        </group>
+        <footer>
+          <button name="get_consumption_rate_view"
+		  class="oe_highlight" type="object"
+		  string="Get Rate" />
+          or
+          <button class="oe_link" special="cancel"
+		  string="Cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <record model='ir.actions.act_window' id='consumption_rate_action'>
+    <field name="name">Consumption Rate</field>
+    <field name="res_model">consumption.rate.date</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="date_selector_view"/>      
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        Click to create a new fuel card.
+      </p>
+    </field>
+  </record>
+  
+  <act_window id="consumption_rate_action"
+              multi="True"
+              key2="client_action_multi"
+              name="Obtener Índice de Consumo"
+              res_model="consumption.rate.date"
+              src_model="fleet.vehicle"
+              view_mode="form"
+              target="new"
+              view_type="form"/>
+  
+
+</odoo>
